@@ -4,8 +4,6 @@ namespace App\Listeners;
 
 use Statamic\Facades\Entry;
 use Statamic\Events\EntrySaved;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class GenerateSearchJson
 {
