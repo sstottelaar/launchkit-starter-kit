@@ -1,0 +1,51 @@
+<nav class="hidden lg:block">
+    <ul class="flex items-center gap-2">
+        {{ nav:main max_depth="2" include_home="false" select="title|url" }}
+            <li
+                x-data="{ subnavOpen: false, isTouchDevice: false }"
+                @keyup.escape.stop.prevent="subnavOpen = false"
+                @mouseenter="if (!isTouchDevice) subnavOpen = true"
+                @mouseleave="if (!isTouchDevice) subnavOpen = false"
+                @touchstart.prevent="isTouchDevice = true; subnavOpen = !subnavOpen"
+                @click.outside="subnavOpen = false"
+                class="relative leading-none"
+            >
+                <a
+                    class="flex px-4 py-2.5 items-center gap-2 font-medium hover:text-blue-700 {{ is_current || is_parent ? 'text-blue-700' : 'text-gray-700' }}"
+                    href="{{ url }}"
+                    {{ if children }}
+                        :aria-expanded="subnavOpen"
+                    {{ /if }}
+                    {{ is_current ?= 'aria-current="page"' }}
+                >
+                    <span>{{ title }}</span>
+                    {{ if children }}
+                        <i class="ph ph-caret-down"></i>
+                    {{ /if }}
+                </a>
+                {{ if children }}
+                    <ul
+                        x-show="subnavOpen"
+                        x-ref="subnav"
+                        class="absolute left-0 px-4 py-3 bg-white border border-gray-100 rounded-lg shadow-lg"
+                        x-transition.duration.300ms
+                        x-cloak
+                    >
+                        {{ children }}
+                            <li>
+                                <a
+                                    class="whitespace-nowrap py-2 block font-medium hover:text-blue-700 {{ is_current || is_parent ? 'text-blue-700' : 'text-gray-700' }}"
+                                    href="{{ url }}"
+                                    {{ is_current ?= 'aria-current="page"' }}
+                                    @touchstart.stop
+                                >
+                                    {{ title }}
+                                </a>
+                            </li>
+                        {{ /children }}
+                    </ul>
+                {{ /if }}
+            </li>
+        {{ /nav:main }}
+    </ul>
+</nav>

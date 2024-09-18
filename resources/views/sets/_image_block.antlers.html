@@ -1,0 +1,12 @@
+<picture class="block">
+    <img
+        class="overflow-hidden rounded-lg"
+        src="{{ glide:image_block_image dpr="2" width="800" height="500" }}"
+        alt="{{ image_block_image:alt }}"
+    />
+    {{ if image_block_caption }}
+        <figcaption class="mt-2 text-sm text-gray-500">
+            {{ image_block_caption }}
+        </figcaption>
+    {{ /if }}
+</picture>

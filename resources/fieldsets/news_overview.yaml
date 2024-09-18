@@ -1,0 +1,30 @@
+title: 'News overview'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: intro
+    field:
+      type: textarea
+      display: Intro
+  -
+    handle: show_all_items
+    field:
+      inline_label: 'All items'
+      inline_label_when_true: 'Select items'
+      default: true
+      type: toggle
+      display: 'Show all items'
+      replicator_preview: false
+  -
+    handle: news_items
+    field:
+      collections:
+        - news
+      type: entries
+      display: 'News items'
+      if:
+        show_all_items: 'equals false'

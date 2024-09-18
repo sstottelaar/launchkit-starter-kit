@@ -1,0 +1,55 @@
+title: 'Bard content'
+fields:
+  -
+    handle: bard_content
+    field:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+      word_count: true
+      remove_empty_nodes: trim
+      link_collections:
+        - pages
+        - news
+      type: bard
+      display: 'Bard content'
+      sets:
+        content:
+          display: Content
+          sets:
+            image_block:
+              display: 'Image block'
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: image_block
+                  prefix: image_block_
+            faq_items_block:
+              display: 'FAQ items block'
+              icon: alert-help-question
+              fields:
+                -
+                  import: faq_items_block
+                  prefix: faq_items_block_
+            content_with_image_block:
+              display: 'Content with image block'
+              icon: layout-two-columns
+              fields:
+                -
+                  import: content_with_image_block
+        overviews:
+          display: Overviews
+          icon: dashboard-layout
+          sets:
+            news_overview:
+              display: 'News overview'
+              icon: content-book-open
+              fields:
+                -
+                  import: news_overview
+                  prefix: news_overview_

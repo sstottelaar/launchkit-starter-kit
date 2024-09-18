@@ -1,0 +1,9 @@
+{
+    "name": "sstottelaar/launchkit-starter-kit",
+    "extra": {
+        "statamic": {
+            "name": "Launchkit Starter Kit",
+            "description": "Launchkit Starter Kit"
+        }
+    }
+}

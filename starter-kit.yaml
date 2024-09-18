@@ -1,0 +1,21 @@
+export_paths:
+  - content
+  - resources/blueprints
+  - config/statamic/bard_texstyle.php
+  - resources/css
+  - resources/js
+  - resources/views
+  - resources/lang
+  - resources/fieldsets
+  - resources/sites.yaml
+  - public/assets
+  - package.json
+  - tailwind.config.js
+  - vite.config.js
+  - .env
+  - .prettierignore
+  - .prettierrc
+  - app/Listeners/GenerateSearchJson.php
+  - app/Providers/EventServiceProvider.php
+dependencies:
+  jacksleight/statamic-bard-texstyle: ^3.3

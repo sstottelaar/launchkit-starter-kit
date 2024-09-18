@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
+        {{ vite src="resources/js/site.js|resources/css/site.css" }}
+        {{# External resources #}}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..800;1,400..800&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body
+        x-data
+        class="flex flex-col min-h-screen text-gray-800"
+        :class="$store.mobileMenu.open ? 'max-sm:overflow-hidden' : ''"
+    >
+        {{ partial:layout/header }}
+        <main class="flex-grow">
+            {{ template_content }}
+        </main>
+
+        {{ partial:navigation/mobile }}
+        {{ partial:components/search }}
+        {{ partial:layout/footer }}
+        {{ yield:footer_scripts }}
+    </body>
+</html>

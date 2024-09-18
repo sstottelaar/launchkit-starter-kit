@@ -1,0 +1,18 @@
+title: News
+template: news/show
+layout: layout
+mount: bf75a8fa-46a1-482a-adaa-105327ea7058
+taxonomies:
+  - news_tags
+revisions: false
+route: '/{mount}/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

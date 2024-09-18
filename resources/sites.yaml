@@ -1,0 +1,5 @@
+default:
+  name: 'Launch Kit Starter Kit'
+  url: /
+  locale: nl_NL
+  lang: nl
