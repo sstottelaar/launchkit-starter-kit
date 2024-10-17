@@ -42,6 +42,13 @@ fields:
               fields:
                 -
                   import: content_with_image_block
+            form_block:
+              display: 'Form block'
+              icon: form-text-field
+              fields:
+                -
+                  import: form_block
+                  prefix: form_block_
         overviews:
           display: Overviews
           icon: dashboard-layout

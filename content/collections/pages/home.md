@@ -4,7 +4,7 @@ blueprint: homepage
 title: Home
 author: 169cc679-eff4-458c-83b4-315c72d2c8a5
 updated_by: 169cc679-eff4-458c-83b4-315c72d2c8a5
-updated_at: 1726042332
+updated_at: 1729156657
 use_meta_keywords: false
 no_index_page: false
 no_follow_links: false

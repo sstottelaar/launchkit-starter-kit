@@ -1,0 +1,40 @@
+{{ form :handle="form:handle" class="flex flex-col gap-6" :redirect="redirect_url" }}
+    {{ fields }}
+        <div class="flex flex-col gap-2">
+            <label class="block font-medium">
+                {{ trans :key="display" }}
+                {{ if validate | contains:required }}
+                    *
+                {{ /if }}
+            </label>
+            <div class="flex flex-wrap gap-3">
+                {{ field }}
+            </div>
+        </div>
+    {{ /fields }}
+    {{ captcha data-theme="light" data-callback="recaptchaCallback" }}
+    {{ if error:captcha }}
+        <div
+            class="self-start inline-block px-4 py-2 border rounded bg-brand-pink-50 border-brand-pink-100"
+        >
+            <span class="flex items-center gap-2 text-sm text-brand-pink-600">
+                {{ partial:components/icon icon="exclamation-mark" }}
+                {{ error:captcha }}
+            </span>
+        </div>
+    {{ /if }}
+    <div class="flex flex-wrap gap-4 max-md:justify-center">
+        {{ partial:components/button :label="submit_label" as="button" iconFamily="bold" variant="primary" icon="paper-plane-tilt" alignment="right" classes="max-md:w-full" id="submit_button" disabled="true" }}
+    </div>
+{{ /form }}
+{{ section:header_scripts }}
+    {{ captcha:head }}
+{{ /section:header_scripts }}
+{{ section:footer_scripts }}
+    <script>
+        function recaptchaCallback() {
+            const submitButton = document.getElementById("submit_button");
+            submitButton.disabled = false;
+        }
+    </script>
+{{ /section:footer_scripts }}

@@ -12,7 +12,7 @@ export_paths:
   - package.json
   - tailwind.config.js
   - vite.config.js
-  - .env
+  - .env.example
   - .prettierignore
   - .prettierrc
   - app/Listeners/GenerateSearchJson.php

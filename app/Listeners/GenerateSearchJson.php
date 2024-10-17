@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use Statamic\Facades\Entry;
 use Statamic\Events\EntrySaved;
+use Illuminate\Support\Facades\File;
 
 class GenerateSearchJson
 {
@@ -24,6 +25,7 @@ class GenerateSearchJson
 
         $data = Entry::query()
             ->whereIn('collection', $collections)
+            ->where('published', true)
             ->get()
             ->transform(function ($page) {
                 return [
@@ -34,6 +36,10 @@ class GenerateSearchJson
             })
             ->toArray();
 
-        file_put_contents(public_path() . '/search/data.json', json_encode($data));
+        $directory = public_path() . "/search";
+        $file = $directory . '/data.json';
+
+        File::ensureDirectoryExists($directory);
+        File::put($file, json_encode($data));
     }
 }
