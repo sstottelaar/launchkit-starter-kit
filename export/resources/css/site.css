@@ -1,0 +1,23 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Typography */
+h1:not(.plain),
+.h1:not(.plain) {
+    @apply text-3xl md:text-4xl font-bold mb-4 lg:mb-8 last:mb-0 leading-snug;
+}
+
+h2:not(.plain),
+.h2:not(.plain) {
+    @apply text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 last:mb-0 leading-snug;
+}
+
+h3:not(.plain),
+.h3:not(.plain) {
+    @apply text-lg lg:text-xl font-semibold mb-4 lg:mb-6 last:mb-0 leading-snug;
+}
+
+.frame + .frame {
+    @apply !pt-0;
+}

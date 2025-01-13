@@ -1,0 +1,40 @@
+<article class="flex flex-col">
+    {{ if teaser_image }}
+        <a href="{{ url }}" class="block" title="{{ title }}">
+            <img
+                src="{{ glide:teaser_image width="400" height="260" dpr="2" }}"
+                class="block rounded-lg"
+            />
+        </a>
+    {{ /if }}
+    {{ if news_tags || date }}
+        <div class="flex flex-wrap items-center gap-4 mt-6">
+            {{ if news_tags }}
+                <div class="flex gap-2">
+                    {{ news_tags }}
+                        {{ partial:components/badge }}
+                            {{ title }}
+                        {{ /partial:components/badge }}
+                    {{ /news_tags }}
+                </div>
+            {{ /if }}
+            {{ if date }}
+                <span class="block text-sm text-gray-500">
+                    {{ date iso_format="dddd d MMMM Y" }}
+                </span>
+            {{ /if }}
+        </div>
+    {{ /if }}
+    <a href="{{ url }}" class="block mt-4" title="{{ title }}">
+        <h2 class="text-xl font-semibold lg:text-2xl">
+            {{ title }}
+        </h2>
+    </a>
+    {{ if teaser_text }}
+        <aside class="mt-2 prose prose-gray line-clamp-3">
+            <p>
+                {{ teaser_text }}
+            </p>
+        </aside>
+    {{ /if }}
+</article>

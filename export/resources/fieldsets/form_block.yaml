@@ -1,0 +1,33 @@
+title: 'Form block'
+fields:
+  -
+    handle: rich_text
+    field: rich_text.rich_text
+  -
+    handle: form_settings
+    field:
+      type: section
+      display: 'Form settings'
+  -
+    handle: form
+    field:
+      max_items: 1
+      type: form
+      display: Form
+  -
+    handle: redirect_url
+    field:
+      collections:
+        - pages
+      type: link
+      display: 'Redirect url'
+      validate:
+        - required
+  -
+    handle: submit_label
+    field:
+      default: Submit
+      type: text
+      display: 'Submit label'
+      validate:
+        - required

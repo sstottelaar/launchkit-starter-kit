@@ -1,0 +1,38 @@
+title: 'Content with image block'
+fields:
+  -
+    handle: rich_text
+    field: rich_text.rich_text
+    config:
+      buttons:
+        - h1
+        - h2
+        - h3
+        - lead
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+  -
+    import: image_block
+    prefix: image_block_
+  -
+    handle: settings
+    field:
+      type: section
+      display: Settings
+  -
+    handle: image_alignment
+    field:
+      options:
+        -
+          key: image-left
+          value: 'Image left'
+        -
+          key: image-right
+          value: 'Image right'
+      default: image-left
+      type: select
+      display: 'Image alignment'

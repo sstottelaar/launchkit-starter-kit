@@ -1,0 +1,37 @@
+title: 'FAQ items block'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: intro
+    field:
+      type: textarea
+      display: Intro
+  -
+    handle: faq_section
+    field:
+      type: replicator
+      display: 'FAQ section'
+      sets:
+        nieuwe_set_groep:
+          display: 'Nieuwe Set Groep'
+          sets:
+            faq_section:
+              display: 'FAQ section'
+              icon: alert-help-question
+              fields:
+                -
+                  handle: faq_section_title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: faq_section_items
+                  field:
+                    collections:
+                      - faq_items
+                    type: entries
+                    display: 'FAQ section items'

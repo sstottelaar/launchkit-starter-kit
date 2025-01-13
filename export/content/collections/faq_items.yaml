@@ -1,0 +1,15 @@
+title: 'FAQ items'
+template: '@blueprint'
+layout: layout
+revisions: false
+title_format: '{question}'
+slugs: false
+sort_dir: desc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

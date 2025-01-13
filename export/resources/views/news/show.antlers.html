@@ -1,0 +1,18 @@
+{{ partial:components/frame }}
+    <div class="container max-w-screen-md">
+        <article class="prose prose-gray max-w-none">
+            <div class="mb-2">
+                <span class="text-sm text-gray-500">
+                    {{ date iso_format="dddd d MMMM Y" }}
+                </span>
+            </div>
+            <h1>
+                {{ title }}
+            </h1>
+
+            {{ bard_content }}
+                {{ partial src="sets/{type}" }}
+            {{ /bard_content }}
+        </article>
+    </div>
+{{ /partial:components/frame }}

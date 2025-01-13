@@ -1,0 +1,62 @@
+title: Article
+tabs:
+  content:
+    display: Content
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            import: article
+  teaser:
+    display: Teaser
+    sections:
+      -
+        display: Teaser
+        fields:
+          -
+            handle: teaser_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Teaser image'
+          -
+            handle: teaser_text
+            field:
+              character_limit: 200
+              type: textarea
+              display: 'Teaser text'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
