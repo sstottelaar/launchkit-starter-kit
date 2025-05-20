@@ -5,6 +5,7 @@ fields:
     field:
       type: text
       display: Label
+      width: 50
       validate:
         - required
   -
@@ -12,8 +13,7 @@ fields:
     field:
       type: link
       display: Link
-      validate:
-        - required
+      width: 50
   -
     handle: variant
     field:
@@ -25,8 +25,26 @@ fields:
           key: secondary
           value: Secondary
         -
-          key: ghost
-          value: Ghost
+          key: white
+          value: White
+        -
+          key: outlined
+          value: Outlined
       default: primary
       type: select
       display: Variant
+      width: 50
+      validate:
+        - required
+  -
+    handle: show_arrow
+    field:
+      type: toggle
+      display: 'Show arrow'
+      width: 25
+  -
+    handle: open_in_new_tab
+    field:
+      type: toggle
+      display: 'Open in new tab'
+      width: 25

@@ -12,17 +12,18 @@
         x-effect="if ($store.searchOverlay.open) $nextTick(() => { $refs.searchInput.focus() })"
     >
         <div
-            class="relative flex items-center justify-between px-5 py-2 border-b border-gray-200"
+            class="relative flex items-center justify-between px-5 py-2 border-b border-shade-200"
         >
             <span class="font-medium">
                 {{ trans key="Search in website" }}
             </span>
 
             <button
-                @click="$store.searchOverlay.open = false"
-                class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-50"
+                @touchstart="$store.searchOverlay.open = false"
+                @mousedown="$store.searchOverlay.open = false"
+                class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-shade-50"
             >
-                <i class="ph ph-x"></i>
+                {{ partial:components/icon icon="x" classes="block leading-none!" }}
             </button>
         </div>
 
@@ -33,13 +34,13 @@
                     name="search"
                     x-model="search"
                     placeholder="{{ trans key='Search' }}"
-                    class="w-full py-2 border border-gray-300 rounded-md lg:py-3 pl-9 placeholder:text-gray-400"
+                    class="w-full py-2 border border-gray-300 rounded-md lg:py-3 pl-9 placeholder:text-shade-400"
                     x-ref="searchInput"
                     autocomplete="off"
                 />
 
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-                    <i class="text-gray-600 ph ph-magnifying-glass"></i>
+                    {{ partial:components/icon icon="magnifying-glass" classes="block leading-none! text-shade-600" }}
                 </div>
             </div>
         </div>
@@ -51,7 +52,7 @@
                         <a
                             :href="item.url"
                             :title="item.title"
-                            class="px-3 py-3 text-sm border-gray-200 rounded-lg hover:bg-gray-50"
+                            class="px-3 py-3 text-sm border-shade-200 rounded-lg hover:bg-shade-50"
                         >
                             <span
                                 x-text="item.title"
@@ -59,14 +60,14 @@
                             ></span>
                             <span
                                 x-text="item.url"
-                                class="text-gray-500"
+                                class="text-shade-500"
                             ></span>
                         </a>
                     </template>
                 </template>
 
                 <template x-if="search && results.length === 0">
-                    <article class="prose-sm prose prose-gray">
+                    <article class="prose-sm prose prose-shade">
                         <p>
                             {{ trans key='No results for' }}
                             <span x-text="search"></span>
@@ -79,10 +80,11 @@
 </div>
 
 <div
-    class="fixed inset-0 z-40 bg-gray-700/30 backdrop-blur-sm"
+    class="fixed inset-0 z-40 bg-shade-700/30 backdrop-blur-xs"
     x-data
     x-cloak
     x-show="$store.searchOverlay.open"
     x-transition.opacity.duration.300ms
-    @click.prevent="$store.searchOverlay.open = false"
+    @touchstart.prevent="$store.searchOverlay.open = false"
+    @mousedown.prevent="$store.searchOverlay.open = false"
 ></div>

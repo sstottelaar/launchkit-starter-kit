@@ -25,3 +25,26 @@ tabs:
               display: 'Mobiele menu label'
               validate:
                 - required
+      -
+        display: 'Error page'
+        fields:
+          -
+            handle: error_page_title
+            field:
+              type: text
+              display: 'Error page title'
+          -
+            handle: error_page_text
+            field:
+              type: textarea
+              display: 'Error page text'
+          -
+            handle: error_page_button_label
+            field:
+              type: text
+              display: 'Error page button label'
+          -
+            handle: error_page_link
+            field:
+              type: link
+              display: 'Error page link'

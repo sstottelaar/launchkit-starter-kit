@@ -3,8 +3,9 @@
     x-data="{ isOpen: false }"
 >
     <button
-        class="flex items-center justify-between text-left"
-        @click="isOpen = !isOpen"
+        class="flex items-center justify-between text-left cursor-pointer"
+        @touchstart="isOpen = !isOpen"
+        @mousedown="isOpen = !isOpen"
     >
         <h3 class="font-medium plain">
             {{ question }}
@@ -14,7 +15,7 @@
             :class="{ 'scale-y-[-1]': isOpen }"
             class="motion-safe:transition-transform"
         >
-            <i class="ph ph-caret-down"></i>
+            {{ partial:components/icon icon="caret-down" }}
         </div>
     </button>
 

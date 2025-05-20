@@ -4,26 +4,28 @@ blueprint: page
 title: Blog
 author: 169cc679-eff4-458c-83b4-315c72d2c8a5
 updated_by: 169cc679-eff4-458c-83b4-315c72d2c8a5
-updated_at: 1725632108
-parent: home
+updated_at: 1747732763
 use_meta_keywords: false
 no_index_page: false
 no_follow_links: false
 sitemap_priority: '0.5'
 sitemap_changefreq: daily
 override_twitter_settings: false
-bard_content:
+building_blocks:
   -
-    type: set
-    attrs:
-      id: m0qrtcyq
-      values:
-        type: news_overview
-        news_overview_title: Blog
-        news_overview_intro: 'Lees het laatste nieuws van onze experts.'
-        news_overview_show_all_items: false
-        news_overview_news_items:
-          - 6c9e6472-7158-47a5-b02b-9f57db3d4243
-          - 87bece55-a100-4b2f-947b-6fb9508bfe22
-          - 5f9d7e8c-ae35-45fe-bf1d-73e0d67956e4
+    id: mawatkhg
+    title: 'Het laatste nieuws'
+    level: h2
+    text:
+      -
+        type: paragraph
+        attrs:
+          class: null
+        content:
+          -
+            type: text
+            text: 'Amet nisi voluptate sint pariatur in Lorem nulla. Eu ipsum incididunt ad proident nostrud magna magna pariatur et ea elit culpa elit. Magna adipisicing exercitation pariatur culpa ullamco minim. Sit aute pariatur ut mollit officia. Cillum velit sit ad anim officia laborum sint. Aliqua nisi labore consectetur. Consectetur exercitation et id qui est ad ad excepteur. Velit non esse exercitation.'
+    show_all_items: true
+    type: news_overview
+    enabled: true
 ---

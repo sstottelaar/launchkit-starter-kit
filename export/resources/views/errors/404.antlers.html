@@ -1,6 +1,95 @@
-<h1>
-    {{ error_page:title }}
-</h1>
-<p>
-    {{ error_page:content }}
-</p>
+{{ partial:components/frame classes="pt-32 lg:!pt-52" }}
+    <div class="container flex flex-col items-center justify-center">
+        <div class="px-4">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 586 256"
+                class="w-[500px] max-w-full"
+            >
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M414 4H172C170.895 4 170 4.89543 170 5.99999V192C170 193.105 170.895 194 172 194H414C415.105 194 416 193.105 416 192V6C416 4.89543 415.105 4 414 4ZM172 0C168.686 0 166 2.68629 166 5.99999V192C166 195.314 168.686 198 172 198H414C417.314 198 420 195.314 420 192V6C420 2.68629 417.314 0 414 0H172Z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M420 44 166 44 166 40 420 40 420 44ZM398 22H291V19H398V22ZM196 29C199.866 29 203 25.866 203 22 203 18.134 199.866 15 196 15 192.134 15 189 18.134 189 22 189 25.866 192.134 29 196 29ZM196 32C201.523 32 206 27.5228 206 22 206 16.4772 201.523 12 196 12 190.477 12 186 16.4772 186 22 186 27.5228 190.477 32 196 32ZM23 57C19.6863 57 17 59.6863 17 63 17 66.3137 19.6863 69 23 69 26.3137 69 29 66.3137 29 63 29 59.6863 26.3137 57 23 57ZM15 63C15 58.5817 18.5817 55 23 55 27.4183 55 31 58.5817 31 63 31 67.4183 27.4183 71 23 71 18.5817 71 15 67.4183 15 63ZM117 128C113.686 128 111 130.686 111 134 111 137.314 113.686 140 117 140 120.314 140 123 137.314 123 134 123 130.686 120.314 128 117 128ZM109 134C109 129.582 112.582 126 117 126 121.418 126 125 129.582 125 134 125 138.418 121.418 142 117 142 112.582 142 109 138.418 109 134ZM225.5 29C229.782 29 233 25.7297 233 22 233 18.2703 229.782 15 225.5 15 221.218 15 218 18.2703 218 22 218 25.7297 221.218 29 225.5 29ZM225.5 32C231.299 32 236 27.5228 236 22 236 16.4772 231.299 12 225.5 12 219.701 12 215 16.4772 215 22 215 27.5228 219.701 32 225.5 32ZM255 29C258.866 29 262 25.866 262 22 262 18.134 258.866 15 255 15 251.134 15 248 18.134 248 22 248 25.866 251.134 29 255 29ZM255 32C260.523 32 265 27.5228 265 22 265 16.4772 260.523 12 255 12 249.477 12 245 16.4772 245 22 245 27.5228 249.477 32 255 32Z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M268 111L250 93L252.121 90.8787L270.121 108.879L268 111Z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M268 93L250 111L247.879 108.879L265.879 90.8787L268 93Z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M106 80L94 68L95.4142 66.5858L107.414 78.5858L106 80Z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M106 68L94 80L92.5858 78.5858L104.586 66.5858L106 68Z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M338 111L320 93L322.121 90.8787L340.121 108.879L338 111Z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M338 93 320 111 317.879 108.879 335.879 90.8787 338 93ZM338 145 250 145 250 142 338 142 338 145Z"
+                    clip-rule="evenodd"
+                />
+                <ellipse
+                    cx="293.5"
+                    cy="244"
+                    fill="currentColor"
+                    fill-opacity=".05"
+                    rx="128.5"
+                    ry="12"
+                />
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M56 19H44V17H56V19ZM68 85H56V83H68V85ZM96 19H65V17H96V19ZM12 127H0V125H12V127ZM52 127H21V125H52V127ZM87 170H56V168H87V170ZM563 57C566.314 57 569 59.6863 569 63 569 66.3137 566.314 69 563 69 559.686 69 557 66.3137 557 63 557 59.6863 559.686 57 563 57ZM571 63C571 58.5817 567.418 55 563 55 558.582 55 555 58.5817 555 63 555 67.4183 558.582 71 563 71 567.418 71 571 67.4183 571 63ZM469 128C472.314 128 475 130.686 475 134 475 137.314 472.314 140 469 140 465.686 140 463 137.314 463 134 463 130.686 465.686 128 469 128ZM477 134C477 129.582 473.418 126 469 126 464.582 126 461 129.582 461 134 461 138.418 464.582 142 469 142 473.418 142 477 138.418 477 134ZM480 80 492 68 490.586 66.5858 478.586 78.5858 480 80Z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M480 68 492 80 493.414 78.5858 481.414 66.5858 480 68ZM530 19H542V17H530V19ZM518 85H530V83H518V85ZM490 19H521V17H490V19ZM574 127H586V125H574V127ZM534 127H565V125H534V127ZM499 170H530V168H499V170Z"
+                    clip-rule="evenodd"
+                />
+            </svg>
+        </div>
+
+        <div class="flex flex-col items-center mt-8 gap-5">
+            <h1 class="text-center mb-0!">
+                {{ website:error_page_title }}
+            </h1>
+
+            <p class="text-center">
+                {{ website:error_page_text }}
+            </p>
+
+            <div>
+                {{ partial:components/button as="a" :label="website:error_page_button_label" :href="website:error_page_link" variant="primary" classes="self-center" target="_self" icon="house" position="start" }}
+            </div>
+        </div>
+    </div>
+{{ /partial:components/frame }}

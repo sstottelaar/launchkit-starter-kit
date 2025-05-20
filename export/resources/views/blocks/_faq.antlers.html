@@ -1,0 +1,17 @@
+{{ partial:components/frame }}
+    <div
+        class="container grid grid-cols-1 lg:grid-cols-2 items-start gap-x-18 gap-y-12"
+    >
+        {{ if title || text }}
+            <div class="flex flex-col lg:sticky lg:top-36">
+                {{ partial:typography/heading as="h1" }}
+                {{ partial:components/rich_text :rich_text="text" }}
+            </div>
+        {{ /if }}
+        <div class="flex flex-col">
+            {{ faq_items }}
+                {{ partial:components/faq_item }}
+            {{ /faq_items }}
+        </div>
+    </div>
+{{ /partial:components/frame }}

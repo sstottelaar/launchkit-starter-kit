@@ -1,0 +1,53 @@
+title: 'Text + media'
+fields:
+  -
+    handle: pretitle
+    field:
+      type: text
+      display: Pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field:
+      buttons:
+        - bold
+        - italic
+        - underline
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+      remove_empty_nodes: trim
+      type: bard
+      display: Text
+      sets:
+        default:
+          display: Default
+          sets:
+            button:
+              display: Button
+              icon: link
+              fields:
+                -
+                  import: button
+  -
+    handle: media
+    field:
+      max_files: 1
+      min_files: 1
+      container: assets
+      type: assets
+      display: Media
+  -
+    handle: block_settings
+    field:
+      type: section
+      display: 'Block settings'
+  -
+    handle: media_position
+    field:
+      inline_label: Left
+      inline_label_when_true: Right
+      type: toggle
+      display: 'Media position'

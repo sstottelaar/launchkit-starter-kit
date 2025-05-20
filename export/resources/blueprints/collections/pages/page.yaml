@@ -12,8 +12,11 @@ tabs:
               required: true
               validate:
                 - required
+      -
+        display: Content
+        fields:
           -
-            import: article
+            import: building_blocks
   sidebar:
     display: Sidebar
     sections:

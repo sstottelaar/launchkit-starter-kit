@@ -12,29 +12,29 @@
             </div>
         </div>
     {{ /fields }}
-    {{ captcha data-theme="light" data-callback="recaptchaCallback" }}
-    {{ if error:captcha }}
-        <div
-            class="self-start inline-block px-4 py-2 border rounded bg-brand-pink-50 border-brand-pink-100"
-        >
-            <span class="flex items-center gap-2 text-sm text-brand-pink-600">
-                {{ partial:components/icon icon="exclamation-mark" }}
-                {{ error:captcha }}
-            </span>
-        </div>
-    {{ /if }}
+    {{ captcha data-theme="light" hidelogo="true" hidefooter="true" }}
     <div class="flex flex-wrap gap-4 max-md:justify-center">
-        {{ partial:components/button :label="submit_label" as="button" iconFamily="bold" variant="primary" icon="paper-plane-tilt" alignment="right" classes="max-md:w-full" id="submit_button" disabled="true" }}
+        {{ partial:components/button :label="submit_label" as="button" variant="primary" icon="paper-plane-tilt" alignment="right" classes="max-md:w-full" id="submit_button" disabled="true" }}
     </div>
 {{ /form }}
 {{ section:header_scripts }}
     {{ captcha:head }}
+    <script
+        src="https://cdn.jsdelivr.net/gh/altcha-org/altcha/dist_i18n/nl.min.js"
+        type="module"
+    ></script>
 {{ /section:header_scripts }}
 {{ section:footer_scripts }}
     <script>
-        function recaptchaCallback() {
+        document.addEventListener("DOMContentLoaded", () => {
+            const altchaWidgetElement = document.querySelector("altcha-widget");
             const submitButton = document.getElementById("submit_button");
-            submitButton.disabled = false;
-        }
+
+            altchaWidgetElement.addEventListener("statechange", (ev) => {
+                if (ev.detail.state === "verified") {
+                    submitButton.disabled = false;
+                }
+            });
+        });
     </script>
 {{ /section:footer_scripts }}

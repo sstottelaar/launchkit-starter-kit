@@ -3,25 +3,24 @@ fields:
   -
     handle: rich_text
     field:
+      type: bard
       buttons:
+        - h1
         - h2
         - h3
+        - h4
         - bold
         - italic
         - unorderedlist
         - orderedlist
         - removeformat
+        - quote
         - anchor
-        - h1
-      word_count: true
-      remove_empty_nodes: trim
-      type: bard
       display: 'Rich text'
-      listable: false
-      sortable: false
+      remove_empty_nodes: trim
       sets:
-        nieuwe_set_groep:
-          display: 'Nieuwe Set Groep'
+        content:
+          display: Content
           sets:
             button:
               display: Button

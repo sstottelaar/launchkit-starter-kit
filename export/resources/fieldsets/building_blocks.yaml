@@ -1,0 +1,68 @@
+title: 'Building blocks'
+fields:
+  -
+    handle: building_blocks
+    field:
+      type: replicator
+      display: 'Building blocks'
+      collapse: true
+      fullscreen: false
+      button_label: 'Add block'
+      sets:
+        content:
+          display: Content
+          icon: content-book-open
+          sets:
+            text_media:
+              display: 'Text + media'
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  import: text_media
+            rich_text:
+              display: 'Rich text'
+              icon: text-formatting-image-left
+              fields:
+                -
+                  import: rich_text
+            faq:
+              display: FAQ
+              icon: alert-help-question
+              fields:
+                -
+                  import: faq
+            logo_cloud:
+              display: 'Logo cloud'
+              icon: favorite-star
+              fields:
+                -
+                  import: logo_cloud
+            text_form:
+              display: 'Text + form'
+              icon: form-text-field
+              fields:
+                -
+                  import: text_form
+            testimonials:
+              display: Testimonials
+              icon: text-formatting-quotation
+              fields:
+                -
+                  import: testimonials
+        layout:
+          display: Layout
+          icon: align-object-top
+          sets:
+            nieuwe_set:
+              display: 'Nieuwe set'
+              fields: {  }
+        overviews:
+          display: Overviews
+          icon: layout-display-split-quarters
+          sets:
+            news_overview:
+              display: 'News overview'
+              icon: media-news-paper
+              fields:
+                -
+                  import: news_overview

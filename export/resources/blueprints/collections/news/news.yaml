@@ -12,8 +12,11 @@ tabs:
               required: true
               validate:
                 - required
+      -
+        display: Content
+        fields:
           -
-            import: article
+            import: building_blocks
   teaser:
     display: Teaser
     sections:
@@ -60,3 +63,11 @@ tabs:
               default: current
               localizable: true
               max_items: 1
+          -
+            handle: news_tags
+            field:
+              type: terms
+              taxonomies:
+                - news_tags
+              display: 'News tags'
+              mode: select

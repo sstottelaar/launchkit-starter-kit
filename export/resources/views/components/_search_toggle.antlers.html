@@ -1,6 +1,6 @@
 <button
     x-data
-    class="z-40 flex items-center justify-center gap-2 px-3 py-3 text-gray-700 bg-white rounded-lg hover:bg-gray-100"
+    class="z-40 flex items-center justify-center gap-2 px-3 py-3 text-shade-700 bg-white rounded-lg hover:bg-shade-100"
     @click="$store.searchOverlay.toggle()"
 >
     <div
@@ -10,13 +10,13 @@
             class="absolute inset-0 flex items-center justify-center"
             x-show="!$store.searchOverlay.open"
         >
-            <i class="block ph ph-magnifying-glass text-lg !leading-none"></i>
+            {{ partial:components/icon icon="magnifying-glass" classes="text-lg leading-none!" }}
         </span>
         <span
             class="absolute inset-0 flex items-center justify-center"
             x-show="$store.searchOverlay.open"
         >
-            <i class="block ph ph-x !leading-none"></i>
+            {{ partial:components/icon icon="x" classes="text-lg leading-none!" }}
         </span>
     </div>
 </button>

@@ -1,0 +1,8 @@
+<source
+    media="{{ media }}"
+    srcset="
+        {{ glide:image :width="width" :height="height" format="webp" :fit="fit ? fit : 'crop_focal'" }}         1x,
+        {{ glide:image :width="width" :height="height" format="webp" dpr="2" :fit="fit ? fit : 'crop_focal'" }} 2x
+    "
+    type="image/webp"
+/>

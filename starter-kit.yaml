@@ -2,6 +2,7 @@ export_paths:
   - content
   - resources/blueprints
   - config/statamic/bard_texstyle.php
+  - config/captcha.php
   - resources/css
   - resources/js
   - resources/views
@@ -10,8 +11,6 @@ export_paths:
   - resources/sites.yaml
   - public/assets
   - package.json
-  - tailwind.config.js
-  - vite.config.js
   - .env.example
   - .prettierignore
   - .prettierrc

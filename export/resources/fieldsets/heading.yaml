@@ -1,0 +1,27 @@
+title: Heading
+fields:
+  -
+    field:
+      type: text
+      width: 66
+      display: Title
+      validate:
+        - required
+    handle: title
+  -
+    field:
+      type: select
+      width: 33
+      default: h2
+      display: Level
+      options:
+        -
+          key: h1
+          value: 'Heading 1'
+        -
+          key: h2
+          value: 'Heading 2'
+        -
+          key: h3
+          value: 'Heading 3'
+    handle: level

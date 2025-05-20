@@ -28,5 +28,17 @@
     "Form": "Formulier",
     "Name": "Naam",
     "Email": "E-mail",
-    "Comment": "Reactie"
+    "Comment": "Reactie",
+    "Building blocks": "Bouwblokken",
+    "Add block": "Blok toevoegen",
+    "Text + media": "Tekst + media",
+    "Text + form": "Tekst + formulier",
+    "Error page": "Foutpagina",
+    "Error page title": "Foutpagina titel",
+    "Error page text": "Foutpagina tekst",
+    "Error page button label": "Foutpagina knop label",
+    "Error page link": "Foutpagina knop link",
+    "Pretitle": "Pretitle",
+    "Level": "Niveau",
+    "Form title": "Formulier titel"
 }

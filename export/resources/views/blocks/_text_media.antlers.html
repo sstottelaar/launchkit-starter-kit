@@ -1,0 +1,24 @@
+{{ partial:components/frame classes="px-5 lg:container" }}
+    <div
+        class="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-y-12 gap-x-12"
+    >
+        <picture class="block {{ if media_position }} order-1 {{ /if }}">
+            {{ partial:components/picture_source :image="media" media="(max-width: 512px)" width="460" height="460" }}
+            {{ partial:components/picture_source :image="media" media="(max-width: 768px)" width="730" height="730" }}
+            {{ partial:components/picture_source :image="media" media="(max-width: 1023px)" width="1020" height="1020" }}
+            {{ partial:components/picture_source :image="media" media="(min-width: 1024px)" width="1020" height="1020" }}
+            <img
+                src="{{ glide:media width="1020" height="1020" }}"
+                alt="{{ media:alt }}"
+                class="w-full h-full object-cover"
+            />
+        </picture>
+        <div class="flex flex-col">
+            <div class="flex flex-col">
+                {{ partial:typography/pretitle }}
+                {{ partial:typography/heading :as="level" }}
+                {{ partial:components/rich_text :rich_text="text" }}
+            </div>
+        </div>
+    </div>
+{{ /partial:components/frame }}

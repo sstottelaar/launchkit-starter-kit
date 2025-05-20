@@ -11,7 +11,7 @@
                 class="relative leading-none"
             >
                 <a
-                    class="flex px-4 py-2.5 items-center gap-2 font-medium hover:text-blue-700 {{ is_current || is_parent ? 'text-blue-700' : 'text-gray-700' }}"
+                    class="flex px-4 py-2.5 items-center gap-2 font-medium hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-shade-700' }}"
                     href="{{ url }}"
                     {{ if children }}
                         :aria-expanded="subnavOpen"
@@ -20,7 +20,7 @@
                 >
                     <span>{{ title }}</span>
                     {{ if children }}
-                        <i class="ph ph-caret-down"></i>
+                        {{ partial:components/icon icon="caret-down" }}
                     {{ /if }}
                 </a>
                 {{ if children }}
@@ -34,7 +34,7 @@
                         {{ children }}
                             <li>
                                 <a
-                                    class="whitespace-nowrap py-2 block font-medium hover:text-blue-700 {{ is_current || is_parent ? 'text-blue-700' : 'text-gray-700' }}"
+                                    class="whitespace-nowrap py-2 block font-medium hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-shade-700' }}"
                                     href="{{ url }}"
                                     {{ is_current ?= 'aria-current="page"' }}
                                     @touchstart.stop

@@ -1,0 +1,17 @@
+title: FAQ
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field: text_media.text
+  -
+    handle: faq_items
+    field:
+      collections:
+        - faq_items
+      type: entries
+      display: 'FAQ items'

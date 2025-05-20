@@ -11,8 +11,11 @@
         </style>
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
         {{ yield:header_scripts }}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.bunny.net" />
+        <link
+            href="https://fonts.bunny.net/css?family=inter:400,500,600,700"
+            rel="stylesheet"
+        />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..800;1,400..800&display=swap"
             rel="stylesheet"
@@ -20,11 +23,11 @@
     </head>
     <body
         x-data
-        class="flex flex-col min-h-screen text-gray-800"
+        class="flex flex-col min-h-screen text-body font-sans"
         :class="$store.mobileMenu.open ? 'max-sm:overflow-hidden' : ''"
     >
         {{ partial:layout/header }}
-        <main class="flex-grow">
+        <main class="grow">
             {{ template_content }}
         </main>
 

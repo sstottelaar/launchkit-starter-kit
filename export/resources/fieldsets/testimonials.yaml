@@ -1,0 +1,11 @@
+title: Testimonials
+fields:
+  - handle: pretitle
+    field: text_media.pretitle
+  - import: heading
+  - handle: text
+    field: text_media.text
+  - handle: items
+    field:
+      type: entries
+      display: Items

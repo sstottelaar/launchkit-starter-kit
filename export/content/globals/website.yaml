@@ -2,3 +2,7 @@ title: Website
 data:
   copyright_text: '&copy;  {{ now format="Y" }} Sjoerd Stottelaar. Alle rechten voorbehouden.'
   mobile_menu_label: Menu
+  error_page_title: 'Pagina niet gevonden'
+  error_page_text: 'Deze pagina is verplaatst of verwijderd. Ga terug naar de homepage.'
+  error_page_button_label: 'Ga naar homepage'
+  error_page_link: 'entry::home'

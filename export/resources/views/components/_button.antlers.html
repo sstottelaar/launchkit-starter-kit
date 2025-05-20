@@ -1,27 +1,29 @@
 <{{ as or 'button' }}
-    {{ if as == 'a' }} href="{{ to }}" {{ /if }}
+    {{ if as == 'a' }} href="{{ href }}" {{ /if }}
     {{ if as == 'button' }} type="submit" {{ /if }}
-    class="rounded-lg gap-2 flex items-center justify-center group border px-3.5 py-2 leading-tight disabled:grayscale disabled:opacity-50 disabled:cursor-not-allowed
-    {{ if variant == 'primary' }}bg-blue-700 border-blue-700 text-white hover:bg-blue-800 {{/if }}
-    {{ if variant == 'white' }} bg-gray-50 border-gray-50 text-gray-700 {{ /if }}
-    {{ if variant == 'outlined' }} bg-transparent border-gray-700 text-gray-700 {{ /if }}
+    class="rounded-3xl gap-2 lg:gap-3 flex items-center justify-center group border px-6 py-2.5 leading-tight cursor-pointer transition duration-100 ease-in-out disabled:grayscale disabled:opacity-50 disabled:cursor-not-allowed
+    {{ if variant == 'primary' }}bg-primary border-primary text-white hover:bg-primary/90 hover:border-primary/90 {{/if }}
+    {{ if variant == 'primary-outline' }}bg-transparent border-primary text-primary {{/if }}
+    {{ if variant == 'link' }}bg-transparent border-transparent text-primary !p-0 {{/if }}
+    {{ if variant == 'secondary' }}bg-secondary border-secondary text-white hover:bg-secondary/90 hover:border-secondary/90 {{/if }}
+    {{ if variant == 'white' }} bg-background-light border-background-light {{ /if }}
+    {{ if variant == 'white-outline' }} bg-transparent border-background-light text-background-light {{ /if }}
+    {{ if variant == 'outlined' }} bg-transparent border-shade-950 text-shade-950 {{ /if }}
     {{ classes }}"
     {{ if target }} target="{{ target }}" {{ /if }}
     {{ if id }} id="{{ id }}" {{ /if }}
     {{ if disabled }} disabled {{ /if }}
     {{ slot:attributes }}
 >
-    {{ if icon && alignment == "left" }}
-        <i class="{{ icon }} {{ iconSize }}"></i>
+    {{ if icon && position == "start" }}
+        {{ partial:components/icon :icon="icon" }}
     {{ /if }}
 
     {{ if label }}
-        <span class="font-medium">{{ label }}</span>
+        <span class="font-medium {{ if variant == 'link' }} underline underline-offset-4 {{ /if }}">{{ label }}</span>
     {{ /if }}
 
-    {{ if icon && alignment == "right" }}
-        <span>
-            {{ partial:components/icon :icon="icon" :icon_family="iconFamily" }}
-        </span>
+    {{ if icon && position == "end" }}
+        {{ partial:components/icon :icon="icon" }}
     {{ /if }}
 </{{ as or 'button' }}>

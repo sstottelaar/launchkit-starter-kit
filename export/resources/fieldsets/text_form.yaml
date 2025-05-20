@@ -1,0 +1,70 @@
+title: 'Text + form'
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field: text_media.text
+  -
+    handle: contact_items
+    field:
+      mode: stacked
+      type: grid
+      display: 'Contact items'
+      fields:
+        -
+          handle: icon
+          field:
+            options:
+              -
+                key: envelope
+                value: Email
+              -
+                key: phone
+                value: Phone
+              -
+                key: map-pin
+                value: Locatie
+            default: envelope
+            type: select
+            display: Icon
+        -
+          handle: label
+          field:
+            type: text
+            display: Label
+        -
+          handle: link
+          field:
+            type: link
+            display: Link
+  -
+    handle: form_section
+    field:
+      type: section
+      display: Form
+  -
+    handle: form_title
+    field:
+      type: text
+      display: 'Form title'
+  -
+    handle: form
+    field:
+      max_items: 1
+      type: form
+      display: Form
+  -
+    handle: form_submit_label
+    field:
+      default: Verzenden
+      type: text
+      display: 'Form submit label'
+  -
+    handle: form_redirect_link
+    field:
+      type: link
+      display: 'Form redirect link'

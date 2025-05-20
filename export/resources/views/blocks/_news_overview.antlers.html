@@ -1,0 +1,21 @@
+{{ partial:components/frame }}
+    <section class="container">
+        <div class="mb-8 lg:mb-12">
+            {{ partial:typography/heading }}
+            {{ partial:components/rich_text :rich_text="text" }}
+        </div>
+        <div
+            class="grid grid-cols-1 gap-6 gap-y-16 sm:ga sm:grid-cols-2 lg:grid-cols-3 md:gap-8"
+        >
+            {{ if show_all_items }}
+                {{ collection:news }}
+                    {{ partial:components/page_card }}
+                {{ /collection:news }}
+            {{ elseif news_items }}
+                {{ news_items }}
+                    {{ partial:components/page_card }}
+                {{ /news_items }}
+            {{ /if }}
+        </div>
+    </section>
+{{ /partial:components/frame }}

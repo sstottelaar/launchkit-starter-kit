@@ -1,0 +1,16 @@
+title: "Logo cloud"
+fields:
+  - handle: pretitle
+    field: text_media.pretitle
+  - import: heading
+  - handle: text
+    field: text_media.text
+  - handle: collapsible
+    field:
+      default: true
+      type: toggle
+      display: Collapsible
+  - handle: block_settings
+    field:
+      type: section
+      display: "Block settings"

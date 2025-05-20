@@ -1,4 +1,0 @@
-title: Website
-data:
-  copyright_text: '&copy;  {{ now format="Y" }} Sjoerd Stottelaar. Alle rechten voorbehouden.'
-  mobile_menu_label: Menu

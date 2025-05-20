@@ -1,15 +1,10 @@
 title: 'News overview'
 fields:
   -
-    handle: title
-    field:
-      type: text
-      display: Title
+    import: heading
   -
-    handle: intro
-    field:
-      type: textarea
-      display: Intro
+    handle: text
+    field: text_media.text
   -
     handle: show_all_items
     field:
