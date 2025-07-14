@@ -1,0 +1,16 @@
+default:
+  titles_section: null
+  title_separator: '|'
+  site_name: 'Launchkit Starter Kit'
+  favicon_section: null
+  global_favicon: null
+  knowledge_graph_section: null
+  company_or_person: company
+  target_name: null
+  company_logo: null
+  breadcrumbs_section: null
+  enable_breadcrumbs: true
+  no_index_section: null
+  no_index_site: false
+  default_locale_section: null
+  default_locale: null

@@ -11,6 +11,7 @@
         </style>
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
         {{ yield:header_scripts }}
+        {{ aardvark-seo:head }}
         <link rel="preconnect" href="https://fonts.bunny.net" />
         <link
             href="https://fonts.bunny.net/css?family=inter:400,500,600,700"
@@ -26,6 +27,7 @@
         class="flex flex-col min-h-screen text-body font-sans"
         :class="$store.mobileMenu.open ? 'max-sm:overflow-hidden' : ''"
     >
+        {{ aardvark-seo:body }}
         {{ partial:layout/header }}
         <main class="grow">
             {{ template_content }}
@@ -35,5 +37,6 @@
         {{ partial:components/search }}
         {{ partial:layout/footer }}
         {{ yield:footer_scripts }}
+        {{ aardvark-seo:footer }}
     </body>
 </html>

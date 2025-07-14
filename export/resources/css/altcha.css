@@ -1,0 +1,11 @@
+:root {
+    --altcha-border-width: 1px;
+    --altcha-border-radius: 3px;
+    --altcha-color-base: var(--color-white);
+    --altcha-color-border: var(--color-neutral-300);
+    --altcha-color-text: var(--color-neutral-800);
+    --altcha-color-border-focus: var(--color-primary);
+    --altcha-color-error-text: var(--color-danger);
+    --altcha-color-footer-bg: var(--color-neutral-50);
+    --altcha-max-width: 260px;
+}

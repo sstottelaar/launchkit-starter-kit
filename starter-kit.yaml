@@ -17,4 +17,16 @@ export_paths:
   - app/Listeners/GenerateSearchJson.php
   - app/Providers/EventServiceProvider.php
 dependencies:
+  aryehraber/statamic-captcha: ^1.13
   jacksleight/statamic-bard-texstyle: ^3.3
+  symfony/http-client: ^7.3
+  symfony/postmark-mailer: ^7.3
+modules:
+  seo:
+    default: true
+    prompt: 'Would you like to install the SEO module?'
+    export_paths:
+      - storage/statamic/.gitignore
+      - storage/statamic/addons/aardvark-seo/aardvark_general.yaml
+    dependencies:
+      withcandour/aardvark-seo: ^5.0

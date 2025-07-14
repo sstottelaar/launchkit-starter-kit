@@ -1,6 +1,7 @@
 @import "tailwindcss";
-
 @plugin '@tailwindcss/forms';
+
+@import "altcha.css";
 
 @theme {
     --breakpoint-xl: 82rem;
@@ -24,18 +25,6 @@
     --color-shade-950: var(--color-neutral-950);
 
     --font-sans: "Inter", sans-serif;
-}
-
-:root {
-    --altcha-border-width: 1px;
-    --altcha-border-radius: 3px;
-    --altcha-color-base: var(--color-white);
-    --altcha-color-border: var(--color-neutral-300);
-    --altcha-color-text: var(--color-neutral-800);
-    --altcha-color-border-focus: var(--color-primary);
-    --altcha-color-error-text: var(--color-danger);
-    --altcha-color-footer-bg: var(--color-neutral-50);
-    --altcha-max-width: 260px;
 }
 
 @utility container {
@@ -62,8 +51,26 @@ h3:not(.plain),
     @apply mb-6 md:mb-8 xl:mb-8 last:mb-0 leading-[1.8];
 }
 
-.frame + .frame {
-    @apply pt-0!;
+.editor ul {
+    @apply list-disc list-outside ml-4 mb-6 flex flex-col gap-2;
+}
+
+.editor ul li p {
+    @apply mb-0 inline;
+}
+
+.editor a {
+    @apply underline underline-offset-2 hover:text-primary;
+}
+
+.editor p strong {
+    @apply font-semibold;
+}
+
+.frame.bg-background + .frame.bg-background,
+.frame.bg-shade-200 + .frame.bg-shade-200,
+.frame:not([class*="bg-"]) + .frame:not([class*="bg-"]) {
+    @apply !pt-0;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
