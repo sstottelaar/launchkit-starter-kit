@@ -1,7 +1,6 @@
 @import "tailwindcss";
+@import "./altcha.css";
 @plugin '@tailwindcss/forms';
-
-@import "altcha.css";
 
 @theme {
     --breakpoint-xl: 82rem;
