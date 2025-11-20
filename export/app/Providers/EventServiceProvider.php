@@ -15,7 +15,7 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         EntrySaved::class => [
-            GenerateSearchJson::class,
+            // GenerateSearchJson::class,
         ]
     ];
 
