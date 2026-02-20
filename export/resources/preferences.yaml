@@ -1,0 +1,42 @@
+favorites:
+  -
+    id: m0r1speq
+    name: "Pagina's"
+    url: /cp/collections/pages
+nav:
+  reorder:
+    - quick_links
+    - content
+    - tools
+    - users
+    - fields
+  sections:
+    quick_links:
+      action: '@create'
+      display: 'Quick links'
+      items:
+        'quick_links::paginas':
+          action: '@create'
+          display: "Pagina's"
+          url: collections/pages
+          icon: content-writing
+    content:
+      'content::collections':
+        action: '@modify'
+        reorder:
+          - 'content::collections::pages'
+          - 'content::collections::news'
+      'content::globals':
+        action: '@modify'
+        children:
+          'content::globals::seo': '@hide'
+    tools:
+      reorder:
+        - 'content::seo'
+      items:
+        'content::seo':
+          action: '@move'
+          icon: search-magnifying-glass
+locale: nl
+confirm_dirty_navigation: false
+theme: null

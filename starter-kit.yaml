@@ -11,13 +11,22 @@ export_paths:
   - resources/lang
   - resources/fieldsets
   - resources/sites.yaml
+  - resources/preferences.yaml
   - public/assets
   - package.json
   - .env.example
   - .prettierignore
   - .prettierrc
+  - app/Providers/AppServiceProvider.php
   - app/Providers/EventServiceProvider.php
   - app/Search/ContentTransformer.php
+  - app/Tags/Seo.php
+  - app/Tags/FaqSchema.php
+  - app/Http/Controllers/SearchController.php
+  - app/Http/Controllers/SitemapController.php
+  - app/Http/Requests/SearchRequest.php
+  - config/sitemap.php
+  - routes/web.php
   - config/statamic/search.php
   - resources/users/groups.yaml
   - resources/users/roles.yaml
