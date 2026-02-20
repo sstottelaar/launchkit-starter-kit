@@ -1,0 +1,49 @@
+title: 'How it works'
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field: text_media.text
+  -
+    handle: steps
+    field:
+      type: replicator
+      display: Steps
+      max_sets: 5
+      validate:
+        - 'min:3'
+      sets:
+        step:
+          display: Step
+          fields:
+            -
+              handle: number
+              field:
+                type: text
+                display: Number
+                instructions: 'Leave empty to auto-number'
+                instructions_position: below
+            -
+              handle: icon
+              field:
+                type: text
+                display: Icon
+                instructions: 'Phosphor icon name (e.g. handshake, rocket-launch)'
+                instructions_position: below
+            -
+              handle: title
+              field:
+                type: text
+                display: Title
+            -
+              handle: description
+              field:
+                type: textarea
+                display: Description
+  -
+    handle: intro_alignment
+    field: intro_alignment.intro_alignment

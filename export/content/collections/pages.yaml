@@ -1,4 +1,5 @@
 title: Pages
+search_index: site
 template: '@blueprint'
 layout: layout
 revisions: false

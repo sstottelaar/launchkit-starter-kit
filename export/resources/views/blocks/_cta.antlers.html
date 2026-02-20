@@ -1,0 +1,15 @@
+{{ partial:components/frame classes="px-5 lg:container {{ section_variant == 'primary-bg' ? 'bg-primary text-white' : '' }} {{ section_variant == 'outlined' ? 'border-2 border-primary' : '' }}" }}
+    <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl lg:text-3xl font-bold mb-6 leading-tight tracking-tight">
+            {{ title }}
+        </h2>
+        {{ if text }}
+            <div class="prose prose-lg mb-8 {{ section_variant == 'primary-bg' ? 'prose-invert' : '' }} [&_p]:leading-relaxed [&_p]:mb-4">
+                {{ text }}
+            </div>
+        {{ /if }}
+        {{ if label }}
+            {{ partial:components/button as="a" :label="label" :href="link" :to="link" variant="{{ section_variant == 'primary-bg' ? 'white' : 'primary' }}" classes="inline-flex" }}
+        {{ /if }}
+    </div>
+{{ /partial:components/frame }}

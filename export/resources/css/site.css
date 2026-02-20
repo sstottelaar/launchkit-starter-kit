@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./altcha.css";
 @plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
 
 @theme {
     --breakpoint-xl: 82rem;
@@ -30,46 +31,70 @@
     @apply mx-auto px-4;
 }
 
-/* Typography */
+@utility search-highlight {
+    @apply bg-primary/10 text-primary rounded font-medium! px-0.5 py-px;
+}
+
+/* Typography – readability & vertical rhythm */
 h1:not(.plain),
 .h1:not(.plain) {
-    @apply text-3xl md:text-4xl font-bold mb-4 lg:mb-6 last:mb-0 leading-snug;
+    @apply text-3xl md:text-4xl font-bold mb-5 lg:mb-6 last:mb-0 leading-tight tracking-tight;
 }
 
 h2:not(.plain),
 .h2:not(.plain) {
-    @apply text-xl lg:text-2xl font-semibold mb-2 last:mb-0 leading-snug;
+    @apply text-xl lg:text-2xl font-semibold mb-4 lg:mb-5 last:mb-0 leading-tight tracking-tight;
 }
 
 h3:not(.plain),
 .h3:not(.plain) {
-    @apply text-lg lg:text-xl font-semibold mb-4 lg:mb-6 last:mb-0 leading-snug;
+    @apply text-lg font-semibold mb-3 last:mb-0 leading-snug;
 }
 
-.editor p {
-    @apply mb-6 md:mb-8 xl:mb-8 last:mb-0 leading-[1.8];
+/* Body text – optimal line height (1.65) and spacing */
+.editor p,
+.prose p {
+    @apply mb-5 last:mb-0;
+    line-height: 1.65;
 }
 
 .editor ul {
-    @apply list-disc list-outside ml-4 mb-6 flex flex-col gap-2;
+    @apply list-disc list-outside ml-5 mb-5 flex flex-col gap-2;
+}
+
+.editor ul li {
+    line-height: 1.65;
 }
 
 .editor ul li p {
     @apply mb-0 inline;
 }
 
-.editor a {
+.editor a,
+.prose a {
     @apply underline underline-offset-2 hover:text-primary;
 }
 
-.editor p strong {
+.editor p strong,
+.prose p strong {
     @apply font-semibold;
+}
+
+/* Prose shade – readable body colour & line height */
+.prose-shade,
+.prose-shade p {
+    @apply text-shade-700;
+    line-height: 1.65;
+}
+
+.prose-shade p {
+    @apply mb-5 last:mb-0;
 }
 
 .frame.bg-background + .frame.bg-background,
 .frame.bg-shade-200 + .frame.bg-shade-200,
 .frame:not([class*="bg-"]) + .frame:not([class*="bg-"]) {
-    @apply !pt-0;
+    @apply pt-0!;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {

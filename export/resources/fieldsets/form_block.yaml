@@ -4,11 +4,6 @@ fields:
     handle: rich_text
     field: rich_text.rich_text
   -
-    handle: form_settings
-    field:
-      type: section
-      display: 'Form settings'
-  -
     handle: form
     field:
       max_items: 1

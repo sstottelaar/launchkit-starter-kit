@@ -1,0 +1,40 @@
+title: Banner
+fields:
+  -
+    handle: text
+    field:
+      type: text
+      display: Text
+      instructions: 'Short announcement shown at the top of the page. Keep it brief.'
+      instructions_position: below
+      validate:
+        - required
+  -
+    handle: link
+    field:
+      type: link
+      display: Link
+      instructions: 'Optional. Makes the entire banner clickable.'
+      instructions_position: below
+  -
+    handle: variant
+    field:
+      type: select
+      display: Variant
+      instructions: 'Background style. Primary for emphasis, dark for contrast.'
+      instructions_position: below
+      default: default
+      options:
+        - key: default
+          value: Default
+        - key: primary
+          value: Primary
+        - key: dark
+          value: Dark
+  -
+    handle: dismissible
+    field:
+      type: toggle
+      display: Dismissible
+      instructions: 'Allow visitors to close the banner. State is remembered per browser.'
+      instructions_position: below

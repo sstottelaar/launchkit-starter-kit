@@ -5,12 +5,17 @@ fields:
   - import: heading
   - handle: text
     field: text_media.text
+  - handle: logos
+    field:
+      type: assets
+      container: assets
+      display: Logos
+      instructions: 'Upload partner or client logos. Best as SVG or PNG with transparent background.'
+      instructions_position: below
   - handle: collapsible
     field:
       default: true
       type: toggle
       display: Collapsible
-  - handle: block_settings
-    field:
-      type: section
-      display: "Block settings"
+  - handle: intro_alignment
+    field: intro_alignment.intro_alignment

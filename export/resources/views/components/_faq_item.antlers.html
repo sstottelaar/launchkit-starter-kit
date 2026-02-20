@@ -1,11 +1,17 @@
 <div
-    class="flex flex-col py-4 border-b border-gray-100"
+    class="flex flex-col py-6 border-b border-shade-200 last:border-b-0"
     x-data="{ isOpen: false }"
+    x-id="['faq-item']"
 >
     <button
-        class="flex items-center justify-between text-left cursor-pointer"
-        @touchstart="isOpen = !isOpen"
-        @mousedown="isOpen = !isOpen"
+        type="button"
+        class="flex items-center justify-between w-full text-left cursor-pointer"
+        :aria-expanded="isOpen"
+        :aria-controls="$id('faq-item')"
+        :id="$id('faq-item') + '-button'"
+        @click="isOpen = !isOpen"
+        @keydown.enter.prevent="isOpen = !isOpen"
+        @keydown.space.prevent="isOpen = !isOpen"
     >
         <h3 class="font-medium plain">
             {{ question }}
@@ -19,8 +25,15 @@
         </div>
     </button>
 
-    <div x-show="isOpen" x-collapse x-cloak>
-        <article class="mt-2 prose">
+    <div
+        :id="$id('faq-item')"
+        role="region"
+        :aria-labelledby="$id('faq-item') + '-button'"
+        x-show="isOpen"
+        x-collapse
+        x-cloak
+    >
+        <article class="mt-4 prose prose-shade max-w-none">
             {{ answer }}
         </article>
     </div>

@@ -1,0 +1,45 @@
+title: Hero
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate:
+        - required
+  -
+    handle: lead
+    field:
+      type: textarea
+      display: Lead
+  -
+    handle: media
+    field:
+      type: assets
+      max_files: 1
+      container: assets
+      display: Media
+  -
+    handle: media_position
+    field:
+      type: toggle
+      display: 'Media position'
+      inline_label: Left
+      inline_label_when_true: Right
+  -
+    handle: button_group
+    field: button_group.buttons
+  -
+    handle: alignment
+    field:
+      type: select
+      display: Alignment
+      default: left
+      options:
+        - key: left
+          value: Left
+        - key: center
+          value: Center

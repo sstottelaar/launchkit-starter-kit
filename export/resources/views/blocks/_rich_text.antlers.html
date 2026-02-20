@@ -1,7 +1,9 @@
 {{ partial:components/frame }}
-    <div class="container max-w-(--breakpoint-md)">
-        {{ rich_text }}
-            {{ partial src="sets/{{ type }}" }}
-        {{ /rich_text }}
+    <div class="container max-w-prose">
+        <div class="editor">
+            {{ rich_text }}
+                {{ partial src="sets/{{ type }}" }}
+            {{ /rich_text }}
+        </div>
     </div>
 {{ /partial:components/frame }}

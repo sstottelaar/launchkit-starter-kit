@@ -1,4 +1,5 @@
 <nav
+    aria-label="{{ trans key='Main navigation' }}"
     class="fixed flex flex-col inset-0 sm:left-2/4 sm:max-w-[600px] shadow-lg z-50 bg-white lg:hidden sm:rounded-l-2xl"
     x-data
     x-show="$store.mobileMenu.open"
@@ -20,7 +21,11 @@
                     <a
                         class="flex justify-between px-5 py-4 font-medium text-md {{ is_current || is_parent ? 'text-primary' : 'text-shade-700' }}"
                         {{ if children }}
+                            role="button"
+                            tabindex="0"
                             @click.prevent="subnavOpen = !subnavOpen"
+                            @keydown.enter.prevent="subnavOpen = !subnavOpen"
+                            @keydown.space.prevent="subnavOpen = !subnavOpen"
                             :aria-expanded="subnavOpen"
                         {{ else }}
                             href="{{ url }}"

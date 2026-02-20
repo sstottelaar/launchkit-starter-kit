@@ -1,0 +1,11 @@
+title: 'Button group'
+fields:
+  -
+    handle: buttons
+    field:
+      type: grid
+      mode: stacked
+      max_rows: 2
+      display: Buttons
+      fields:
+        - import: button

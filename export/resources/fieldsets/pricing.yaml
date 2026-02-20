@@ -1,0 +1,53 @@
+title: Pricing
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field: text_media.text
+  -
+    handle: plans
+    field:
+      type: replicator
+      display: Plans
+      sets:
+        plan:
+          display: Plan
+          fields:
+            -
+              handle: name
+              field:
+                type: text
+                display: Name
+            -
+              handle: price
+              field:
+                type: text
+                display: Price
+            -
+              handle: period
+              field:
+                type: text
+                display: Period
+                instructions: 'e.g. /month, /year'
+                instructions_position: below
+            -
+              handle: features
+              field:
+                type: textarea
+                display: Features
+                instructions: 'One per line'
+                instructions_position: below
+            -
+              import: button
+            -
+              handle: highlighted
+              field:
+                type: toggle
+                display: Highlighted
+  -
+    handle: intro_alignment
+    field: intro_alignment.intro_alignment

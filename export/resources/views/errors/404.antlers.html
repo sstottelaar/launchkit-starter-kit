@@ -6,6 +6,7 @@
                 fill="none"
                 viewBox="0 0 586 256"
                 class="w-[500px] max-w-full"
+                aria-hidden="true"
             >
                 <path
                     fill="currentColor"
@@ -88,7 +89,7 @@
             </p>
 
             <div>
-                {{ partial:components/button as="a" :label="website:error_page_button_label" :href="website:error_page_link" variant="primary" classes="self-center" target="_self" icon="house" position="start" }}
+                {{ partial:components/button as="a" :label="website:error_page_button_label" :href="website:error_page_link | url" variant="primary" classes="self-center" target="_self" icon="house" position="start" }}
             </div>
         </div>
     </div>

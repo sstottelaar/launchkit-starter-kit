@@ -36,6 +36,13 @@ tabs:
               character_limit: 200
               type: textarea
               display: 'Teaser text'
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: seo
   sidebar:
     display: Sidebar
     sections:

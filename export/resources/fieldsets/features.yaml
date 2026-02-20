@@ -1,0 +1,52 @@
+title: Features
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field: text_media.text
+  -
+    handle: items
+    field:
+      type: replicator
+      display: Items
+      sets:
+        item:
+          display: Feature
+          fields:
+            -
+              handle: icon
+              field:
+                type: text
+                display: Icon
+                instructions: 'Phosphor icon name (e.g. check-circle, star)'
+                instructions_position: below
+            -
+              handle: title
+              field:
+                type: text
+                display: Title
+            -
+              handle: description
+              field:
+                type: textarea
+                display: Description
+  -
+    handle: columns
+    field:
+      type: select
+      display: Columns
+      default: '3'
+      options:
+        - key: '2'
+          value: '2'
+        - key: '3'
+          value: '3'
+        - key: '4'
+          value: '4'
+  -
+    handle: intro_alignment
+    field: intro_alignment.intro_alignment

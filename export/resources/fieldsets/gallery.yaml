@@ -1,0 +1,45 @@
+title: Gallery
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field: text_media.text
+  -
+    handle: images
+    field:
+      type: assets
+      container: assets
+      display: Images
+  -
+    handle: columns
+    field:
+      type: select
+      display: Columns
+      default: '3'
+      options:
+        - key: '2'
+          value: '2'
+        - key: '3'
+          value: '3'
+        - key: '4'
+          value: '4'
+  -
+    handle: gap
+    field:
+      type: select
+      display: Gap
+      default: md
+      options:
+        - key: sm
+          value: Small
+        - key: md
+          value: Medium
+        - key: lg
+          value: Large
+  -
+    handle: intro_alignment
+    field: intro_alignment.intro_alignment

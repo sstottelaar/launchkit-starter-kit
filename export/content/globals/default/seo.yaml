@@ -1,0 +1,4 @@
+site_title: '{{ site:name }}'
+title_separator: pipe
+no_index_site: false
+x_default_site: default

@@ -1,3 +1,24 @@
-<section class="bg-shade-50 py-12">
-    <div class="container flex justify-center">Testimonials</div>
-</section>
+{{ partial:components/frame classes="px-5 lg:container bg-shade-50" }}
+    {{ partial:layout/block_intro :alignment="intro_alignment" }}
+    {{ if items }}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {{ items }}
+                <blockquote class="flex flex-col p-6 lg:p-8 rounded-lg bg-white border border-shade-200">
+                    <p class="text-shade-700 leading-relaxed mb-6 flex-1">
+                        "{{ quote }}"
+                    </p>
+                    <footer class="mt-auto">
+                        <cite class="not-italic font-semibold text-shade-900">
+                            {{ author }}
+                        </cite>
+                        {{ if company }}
+                            <span class="block text-sm text-shade-600 mt-0.5">
+                                {{ company }}
+                            </span>
+                        {{ /if }}
+                    </footer>
+                </blockquote>
+            {{ /items }}
+        </div>
+    {{ /if }}
+{{ /partial:components/frame }}

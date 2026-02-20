@@ -1,0 +1,29 @@
+<div
+    x-data="{ dismissed: false }"
+    x-init="dismissed = localStorage.getItem('banner-dismissed') === 'true'"
+    x-show="!dismissed"
+    x-cloak
+    class="py-3.5 px-4 text-sm leading-relaxed {{ variant == 'primary' ? 'bg-primary text-white' : (variant == 'dark' ? 'bg-shade-800 text-white' : 'bg-shade-100 text-shade-800') }}"
+>
+    <div class="container flex items-center justify-between gap-4">
+        <div class="flex-1 min-w-0">
+            {{ if link }}
+                <a href="{{ link }}" class="hover:underline">
+                    {{ text }}
+                </a>
+            {{ else }}
+                <span>{{ text }}</span>
+            {{ /if }}
+        </div>
+        {{ if dismissible }}
+            <button
+                type="button"
+                aria-label="{{ trans key='Close banner' }}"
+                @click="dismissed = true; localStorage.setItem('banner-dismissed', 'true')"
+                class="shrink-0 p-1 rounded hover:opacity-80"
+            >
+                {{ partial:components/icon icon="x" classes="block" }}
+            </button>
+        {{ /if }}
+    </div>
+</div>

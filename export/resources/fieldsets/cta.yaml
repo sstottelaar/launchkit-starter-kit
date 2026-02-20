@@ -1,0 +1,27 @@
+title: CTA
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate:
+        - required
+  -
+    handle: text
+    field: text_media.text
+  -
+    import: button
+  -
+    handle: section_variant
+    field:
+      type: select
+      display: 'Section variant'
+      default: default
+      options:
+        - key: default
+          value: Default
+        - key: primary-bg
+          value: 'Primary background'
+        - key: outlined
+          value: Outlined

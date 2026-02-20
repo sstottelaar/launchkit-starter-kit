@@ -1,0 +1,38 @@
+title: Video
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field: text_media.text
+  -
+    handle: video_url
+    field:
+      type: text
+      display: 'Video URL'
+      instructions: 'YouTube or Vimeo URL. Leave empty if uploading a video file.'
+      instructions_position: below
+  -
+    handle: video_file
+    field:
+      type: assets
+      max_files: 1
+      container: assets
+      display: 'Video upload'
+      instructions: 'Upload a video file (e.g. MP4, WebM). Used when no video URL is provided.'
+      instructions_position: below
+      hide_when:
+        video_url: 'not empty'
+  -
+    handle: video_title
+    field:
+      type: text
+      display: 'Video title'
+      instructions: 'For accessibility (iframe title attribute)'
+      instructions_position: below
+  -
+    handle: intro_alignment
+    field: intro_alignment.intro_alignment

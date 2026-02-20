@@ -1,4 +1,4 @@
-{{ form :handle="form:handle" class="flex flex-col gap-6" :redirect="redirect_url" }}
+{{ form :handle="form" class="flex flex-col gap-6" :redirect="redirect_url" }}
     {{ fields }}
         <div class="flex flex-col gap-2">
             <label class="block font-medium">
@@ -14,7 +14,7 @@
     {{ /fields }}
     {{ captcha data-theme="light" hidelogo="true" hidefooter="true" }}
     <div class="flex flex-wrap gap-4 max-md:justify-center">
-        {{ partial:components/button :label="submit_label" as="button" variant="primary" icon="paper-plane-tilt" alignment="right" classes="max-md:w-full" id="submit_button" disabled="true" }}
+        {{ partial:components/button :label="submit_label" as="button" variant="primary" icon="paper-plane-tilt" position="end" classes="max-md:w-full form-submit-button" disabled="true" }}
     </div>
 {{ /form }}
 {{ section:header_scripts }}
@@ -27,12 +27,15 @@
 {{ section:footer_scripts }}
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const altchaWidgetElement = document.querySelector("altcha-widget");
-            const submitButton = document.getElementById("submit_button");
-
-            altchaWidgetElement.addEventListener("statechange", (ev) => {
-                if (ev.detail.state === "verified") {
-                    submitButton.disabled = false;
+            document.querySelectorAll("form").forEach((form) => {
+                const widget = form.querySelector("altcha-widget");
+                const submitButton = form.querySelector("button.form-submit-button");
+                if (widget && submitButton) {
+                    widget.addEventListener("statechange", (ev) => {
+                        if (ev.detail.state === "verified") {
+                            submitButton.disabled = false;
+                        }
+                    });
                 }
             });
         });

@@ -1,16 +1,18 @@
 {{ partial:components/frame }}
     <div class="container">
         <div
-            class="container grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12 lg:items-center"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-x-14 lg:gap-x-16 gap-y-14 lg:gap-y-16 lg:items-center"
         >
-            <div>
-                {{ partial:components/form :form="form" :submit_label="form_submit_label" :redirect_url="form_redirect_url" }}
-            </div>
-            <div class="flex flex-col">
-                {{ partial:typography/pretitle }}
-                {{ partial:typography/heading }}
+        <div>
+            {{ partial:components/form :form="form" :submit_label="form_submit_label" :redirect_url="form_redirect_link" }}
+        </div>
+        <div class="flex flex-col max-w-xl">
+            {{ partial:typography/pretitle }}
+            {{ partial:typography/heading }}
+            <div class="mt-6">
                 {{ partial:components/rich_text :rich_text="text" }}
             </div>
+        </div>
         </div>
     </div>
 {{ /partial:components/frame }}

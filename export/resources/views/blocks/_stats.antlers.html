@@ -1,0 +1,17 @@
+{{ partial:components/frame classes="px-5 lg:container" }}
+    {{ partial:layout/block_intro :alignment="intro_alignment" }}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {{ items }}
+            <div class="p-8 rounded-lg border border-shade-200 bg-white text-center">
+                <div class="text-3xl lg:text-4xl font-bold text-primary leading-none">
+                    {{ number }}{{ suffix }}
+                </div>
+                {{ if label }}
+                    <div class="mt-4 text-base text-shade-700 leading-relaxed">
+                        {{ label }}
+                    </div>
+                {{ /if }}
+            </div>
+        {{ /items }}
+    </div>
+{{ /partial:components/frame }}

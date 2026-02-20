@@ -1,0 +1,31 @@
+title: Testimonial
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: quote
+            field:
+              type: textarea
+              display: Quote
+              validate: [required]
+          -
+            handle: author
+            field:
+              type: text
+              display: Author
+              validate: [required]
+          -
+            handle: company
+            field:
+              type: text
+              display: Company
+          -
+            handle: image
+            field:
+              type: assets
+              max_files: 1
+              container: assets
+              display: Image

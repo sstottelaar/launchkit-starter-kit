@@ -1,9 +1,11 @@
 <button
+    type="button"
     x-data
     class="flex items-center gap-2 justify-center px-5 py-2.5 border border-shade-200 bg-white cursor-pointer transition-shadow duration-100 ease-in-out rounded-full lg:hidden shadow-shade-700/5 text-shade-700 z-40 {{ classes }}"
     :class="$store.mobileMenu.open ? 'shadow-none' : 'shadow-md'"
-    @touchstart="$store.mobileMenu.toggle()"
-    @mousedown="$store.mobileMenu.toggle()"
+    :aria-expanded="$store.mobileMenu.open"
+    aria-label="{{ website:mobile_menu_label }}"
+    @click="$store.mobileMenu.toggle()"
 >
     <div
         class="grid w-[20px] h-[20px] grid-cols-1 grid-rows-1 items-center justify-center relative"
@@ -22,9 +24,6 @@
         </span>
     </div>
     <span class="text-sm font-medium leading-none text-shade-700">
-        {{ website:mobile_menu_label }}
-    </span>
-    <span class="sr-only">
         {{ website:mobile_menu_label }}
     </span>
 </button>

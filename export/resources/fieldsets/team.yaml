@@ -1,0 +1,20 @@
+title: Team
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field: text_media.text
+  -
+    handle: team_members
+    field:
+      type: entries
+      collections:
+        - team_members
+      display: 'Team members'
+  -
+    handle: intro_alignment
+    field: intro_alignment.intro_alignment

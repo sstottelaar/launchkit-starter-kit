@@ -1,0 +1,21 @@
+<div class="overflow-hidden bg-white aspect-video">
+    {{ if video_file }}
+        <video
+            src="{{ video_file:url }}"
+            controls
+            class="h-full w-full"
+            {{ if video_title }}title="{{ video_title }}"{{ /if }}
+        >
+            {{ trans key="Your browser does not support the video tag." }}
+        </video>
+    {{ elseif video_url }}
+        <iframe
+            src="{{ video_url | embed_url }}"
+            title="{{ video_title ?? 'Video' }}"
+            class="h-full w-full"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        ></iframe>
+    {{ /if }}
+</div>

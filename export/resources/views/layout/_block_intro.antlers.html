@@ -1,0 +1,13 @@
+<div
+    class="max-w-2xl mb-12 lg:mb-14 {{ alignment == 'center' ? 'text-center mx-auto' : '' }}"
+>
+    {{ partial:typography/pretitle }}
+    {{ partial:typography/heading }}
+    {{ if text }}
+        <div
+            class="prose prose-shade mt-6 {{ alignment == 'center' ? 'mx-auto' : '' }}"
+        >
+            {{ text }}
+        </div>
+    {{ /if }}
+</div>

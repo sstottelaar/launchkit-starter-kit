@@ -1,0 +1,35 @@
+title: SEO
+fields:
+  -
+    handle: seo_title
+    field:
+      type: text
+      display: 'SEO title'
+      instructions: 'Leave empty to use page title. Recommended 50–60 characters.'
+      instructions_position: below
+      character_limit: 70
+  -
+    handle: seo_description
+    field:
+      type: textarea
+      display: 'Meta description'
+      instructions: 'Leave empty to use site default. Recommended 150–160 characters.'
+      instructions_position: below
+      character_limit: 320
+  -
+    handle: seo_image
+    field:
+      type: assets
+      max_files: 1
+      container: assets
+      display: 'Social image'
+      instructions: 'Override default og:image for this page. Recommended 1200×630px.'
+      instructions_position: below
+  -
+    handle: no_index
+    field:
+      type: toggle
+      display: 'No index'
+      instructions: 'Exclude this page from search engine indexing.'
+      instructions_position: below
+      default: false

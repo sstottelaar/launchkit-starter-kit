@@ -1,0 +1,35 @@
+{{ partial:components/frame classes="px-5 lg:container" }}
+    {{ partial:layout/block_intro :alignment="intro_alignment" }}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+        {{ team_members }}
+            <article class="flex flex-col">
+                {{ if image }}
+                    <div class="aspect-square rounded-lg overflow-hidden mb-5">
+                        <img
+                            src="{{ glide:image width="400" height="400" }}"
+                            alt="{{ image:alt or name }}"
+                            width="400"
+                            height="400"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                {{ /if }}
+                <h3 class="text-lg font-semibold mb-1 leading-snug">
+                    {{ name }}
+                </h3>
+                {{ if role }}
+                    <div class="text-sm text-primary mb-3 font-medium">
+                        {{ role }}
+                    </div>
+                {{ /if }}
+                {{ if bio }}
+                    <p class="text-shade-700 text-base leading-relaxed">
+                        {{ bio }}
+                    </p>
+                {{ /if }}
+            </article>
+        {{ /team_members }}
+    </div>
+{{ /partial:components/frame }}

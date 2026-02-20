@@ -1,0 +1,96 @@
+tabs:
+  site_defaults:
+    display: "Site defaults"
+    sections:
+      - display: Title
+        fields:
+          - handle: site_title
+            field:
+              type: text
+              display: "Site title"
+              instructions: "Used in page titles and Open Graph. Leave empty to use site name from config."
+              instructions_position: below
+              placeholder: "Mijn site"
+              antlers: true
+          - handle: title_separator
+            field:
+              type: select
+              display: "Title separator"
+              instructions: "Character between page title and site name."
+              instructions_position: below
+              default: pipe
+              options:
+                pipe: "|"
+                dash: "-"
+                dot: ·
+                endash: –
+                emdash: —
+      - display: Description
+        fields:
+          - handle: site_description
+            field:
+              type: textarea
+              display: "Site description"
+              instructions: "Default meta description for pages without their own."
+              instructions_position: below
+              character_limit: 320
+      - display: Favicon
+        fields:
+          - handle: favicon
+            field:
+              type: assets
+              max_files: 1
+              container: assets
+              display: Favicon
+              instructions: "Browser tab icon. ICO or PNG, typically 32×32 or 16×16."
+              instructions_position: below
+              width: 50
+      - display: "Social image"
+        fields:
+          - handle: site_image
+            field:
+              type: assets
+              max_files: 1
+              container: assets
+              display: "Default social image"
+              instructions: "Used for og:image and Twitter cards when no entry image is set."
+              instructions_position: below
+      - display: "Base graph data"
+        fields:
+          - handle: organization_name
+            field:
+              type: text
+              display: "Organization name"
+              instructions: "Company/brand name for JSON-LD schema (Organization)."
+              instructions_position: below
+              placeholder: "Mijn bedrijf"
+              width: 50
+          - handle: organization_logo
+            field:
+              type: assets
+              max_files: 1
+              container: assets
+              display: "Organization logo"
+              instructions: "Logo for JSON-LD schema. Square, min 112×112px."
+              instructions_position: below
+              width: 50
+      - display: Indexing
+        fields:
+          - handle: no_index_site
+            field:
+              type: toggle
+              display: "No index (site-wide)"
+              instructions: "Add robots noindex to all pages. Use for staging/dev sites."
+              instructions_position: below
+              width: 50
+      - display: "Multiple sites"
+        instructions: "Only relevant when you have multiple language or regional versions of your site."
+        fields:
+          - handle: x_default_site
+            field:
+              type: sites
+              display: "Default site"
+              instructions: "Which site to show when the user's language doesn't match? Leave empty to use the current site."
+              instructions_position: below
+              max_items: 1
+              width: 100

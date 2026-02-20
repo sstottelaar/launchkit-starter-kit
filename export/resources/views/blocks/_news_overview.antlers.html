@@ -1,11 +1,13 @@
 {{ partial:components/frame }}
     <section class="container">
-        <div class="mb-8 lg:mb-12">
+        <div class="max-w-2xl mb-12 lg:mb-14">
             {{ partial:typography/heading }}
-            {{ partial:components/rich_text :rich_text="text" }}
+            <div class="mt-6">
+                {{ partial:components/rich_text :rich_text="text" }}
+            </div>
         </div>
         <div
-            class="grid grid-cols-1 gap-6 gap-y-16 sm:ga sm:grid-cols-2 lg:grid-cols-3 md:gap-8"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-10 lg:mt-12"
         >
             {{ if show_all_items }}
                 {{ collection:news }}

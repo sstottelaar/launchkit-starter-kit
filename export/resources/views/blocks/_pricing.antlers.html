@@ -1,0 +1,25 @@
+{{ partial:components/frame classes="px-5 lg:container" }}
+    {{ partial:layout/block_intro :alignment="intro_alignment" }}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        {{ plans }}
+            <div class="p-8 rounded-lg border-2 {{ highlighted ? 'border-primary bg-shade-50' : 'border-shade-200' }} flex flex-col">
+                <h3 class="text-xl font-semibold mb-3 leading-snug">
+                    {{ name }}
+                </h3>
+                <div class="text-3xl font-bold text-primary mb-6 leading-none">
+                    {{ price }}{{ period }}
+                </div>
+                {{ if features }}
+                    <div class="mb-8 text-base text-shade-700 space-y-3 leading-relaxed">
+                        {{ features | nl2br }}
+                    </div>
+                {{ /if }}
+                {{ if label }}
+                    <div class="mt-auto pt-4">
+                        {{ partial:components/button as="a" :label="label" :href="link" :to="link" variant="{{ highlighted ? 'primary' : 'primary-outline' }}" classes="w-full" }}
+                    </div>
+                {{ /if }}
+            </div>
+        {{ /plans }}
+    </div>
+{{ /partial:components/frame }}

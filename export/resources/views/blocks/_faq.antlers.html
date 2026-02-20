@@ -1,11 +1,14 @@
+{{ faq_schema }}
 {{ partial:components/frame }}
     <div
-        class="container grid grid-cols-1 lg:grid-cols-2 items-start gap-x-18 gap-y-12"
+        class="container grid grid-cols-1 lg:grid-cols-2 items-start gap-x-16 lg:gap-x-20 gap-y-14 lg:gap-y-16"
     >
         {{ if title || text }}
-            <div class="flex flex-col lg:sticky lg:top-36">
+            <div class="flex flex-col lg:sticky lg:top-36 max-w-xl">
                 {{ partial:typography/heading as="h1" }}
-                {{ partial:components/rich_text :rich_text="text" }}
+                <div class="mt-6">
+                    {{ partial:components/rich_text :rich_text="text" }}
+                </div>
             </div>
         {{ /if }}
         <div class="flex flex-col">

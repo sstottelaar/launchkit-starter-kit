@@ -1,0 +1,21 @@
+{{ partial:components/frame classes="px-5 lg:container" }}
+    {{ partial:layout/block_intro :alignment="intro_alignment" }}
+    <div
+        class="gallery-masonry {{ columns == '2' ? 'columns-2' : (columns == '3' ? 'columns-3' : 'columns-4') }} {{ gap == 'sm' ? 'gap-5' : (gap == 'md' ? 'gap-6' : 'gap-8') }} mt-10 lg:mt-12"
+    >
+        {{ images }}
+            <div class="break-inside-avoid mb-4">
+                <img
+                    src="{{ glide:id width="600" height="600" fit="crop_focal" }}"
+                    srcset="{{ glide:id width="600" height="600" fit="crop_focal" }} 1x, {{ glide:id width="1200" height="1200" fit="crop_focal" }} 2x"
+                    alt="{{ alt }}"
+                    width="600"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full rounded-lg object-cover"
+                />
+            </div>
+        {{ /images }}
+    </div>
+{{ /partial:components/frame }}

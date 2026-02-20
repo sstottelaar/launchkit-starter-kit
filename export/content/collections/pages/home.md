@@ -4,7 +4,7 @@ blueprint: homepage
 title: Home
 author: 169cc679-eff4-458c-83b4-315c72d2c8a5
 updated_by: 169cc679-eff4-458c-83b4-315c72d2c8a5
-updated_at: 1747682922
+updated_at: 1771595550
 use_meta_keywords: false
 no_index_page: false
 no_follow_links: false
@@ -34,7 +34,7 @@ building_blocks:
           -
             type: text
             text: 'Sit culpa minim incididunt ea est ipsum fugiat commodo magna eiusmod. Et in non in aliqua ullamco excepteur amet exercitation deserunt ea. Cupidatat labore in fugiat sunt. Irure sit eu cupidatat id incididunt dolore reprehenderit ex in ea eiusmod proident proident. Ut dolor voluptate laboris esse consectetur cillum irure tempor reprehenderit eu laborum sint ut sint consectetur. Sit anim fugiat commodo ad sunt amet nulla nisi ad incididunt sit nisi pariatur.'
-    media: dummy-images/jason-goodman-64201tp25bw-unsplash.jpg
+    media: dummy-images/jason-goodman-bzqu01v-g54-unsplash.jpg
     media_position: true
     type: text_media
     enabled: true
@@ -75,4 +75,5 @@ building_blocks:
       - 0ccead0c-8bfe-43c8-a80e-6d98fe9d097e
     type: faq
     enabled: true
+no_index: true
 ---

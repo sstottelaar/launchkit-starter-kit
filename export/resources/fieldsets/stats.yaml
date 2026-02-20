@@ -1,0 +1,39 @@
+title: Stats
+fields:
+  -
+    handle: pretitle
+    field: text_media.pretitle
+  -
+    import: heading
+  -
+    handle: text
+    field: text_media.text
+  -
+    handle: items
+    field:
+      type: replicator
+      display: Items
+      sets:
+        item:
+          display: Stat
+          fields:
+            -
+              handle: number
+              field:
+                type: text
+                display: Number
+            -
+              handle: label
+              field:
+                type: text
+                display: Label
+            -
+              handle: suffix
+              field:
+                type: text
+                display: Suffix
+                instructions: 'Optional (e.g. +, %)'
+                instructions_position: below
+  -
+    handle: intro_alignment
+    field: intro_alignment.intro_alignment

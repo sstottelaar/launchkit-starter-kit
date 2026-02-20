@@ -1,6 +1,9 @@
 <button
+    type="button"
     x-data
     class="z-40 flex items-center justify-center gap-2 px-3 py-3 text-shade-700 bg-white rounded-lg hover:bg-shade-100"
+    aria-label="{{ trans key='Search' }}"
+    :aria-expanded="$store.searchOverlay.open"
     @click="$store.searchOverlay.toggle()"
 >
     <div

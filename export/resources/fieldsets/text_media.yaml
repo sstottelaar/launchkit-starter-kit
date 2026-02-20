@@ -40,11 +40,6 @@ fields:
       type: assets
       display: Media
   -
-    handle: block_settings
-    field:
-      type: section
-      display: 'Block settings'
-  -
     handle: media_position
     field:
       inline_label: Left

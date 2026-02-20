@@ -1,8 +1,6 @@
 import Alpine from "alpinejs";
 import collapse from "@alpinejs/collapse";
 import focus from "@alpinejs/focus";
-import axios from "axios";
-import Fuse from "fuse.js";
 
 Alpine.plugin(collapse);
 Alpine.plugin(focus);
@@ -27,37 +25,41 @@ document.addEventListener("alpine:init", () => {
 });
 
 Alpine.data("search", () => ({
-    fuse: null,
     search: "",
     results: [],
+    loading: false,
+    searchTimeout: null,
 
     init() {
-        axios.get(`/search/data.json`).then((response) => {
-            this.fuse = new Fuse(response.data, {
-                includeScore: true,
-                threshold: 0.4,
-                keys: ["title"],
-            });
-        });
-
         this.$watch("search", (value) => {
-            if (!this.fuse || !value) {
+            const query = value?.trim() ?? "";
+            if (query.length < 2) {
+                clearTimeout(this.searchTimeout);
                 this.results = [];
+                this.loading = false;
                 return;
             }
 
-            const data = this.fuse
-                .search(value)
-                .sort((a, b) => a.score - b.score)
-                .slice(0, 10)
-                .map(({ item }) => ({
-                    title: item.title,
-                    url: item.url,
-                    blueprint: item.blueprint,
-                }));
-
-            this.results = data;
+            this.loading = true;
+            clearTimeout(this.searchTimeout);
+            this.searchTimeout = setTimeout(() => {
+                this.performSearch(query);
+            }, 200);
         });
+    },
+
+    async performSearch(query) {
+        this.loading = true;
+        try {
+            const response = await fetch(
+                `/search.json?${new URLSearchParams({ q: query })}`
+            );
+            this.results = response.ok ? await response.json() : [];
+        } catch {
+            this.results = [];
+        } finally {
+            this.loading = false;
+        }
     },
 }));
 

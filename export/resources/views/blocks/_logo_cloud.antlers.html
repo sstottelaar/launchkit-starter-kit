@@ -1,3 +1,18 @@
-<section class="bg-shade-50 py-12">
-    <div class="container flex justify-center">Comparison table</div>
-</section>
+{{ partial:components/frame classes="px-5 lg:container bg-shade-50" }}
+    {{ partial:layout/block_intro :alignment="intro_alignment" }}
+    {{ if logos }}
+        <div class="flex flex-wrap items-center justify-center gap-10 lg:gap-14 grayscale opacity-70 hover:opacity-100 transition-opacity">
+            {{ logos }}
+                <img
+                    src="{{ glide:id width="160" height="80" fit="contain" }}"
+                    alt="{{ alt ?? 'Partner logo' }}"
+                    width="160"
+                    height="80"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-8 lg:h-10 w-auto object-contain"
+                />
+            {{ /logos }}
+        </div>
+    {{ /if }}
+{{ /partial:components/frame }}

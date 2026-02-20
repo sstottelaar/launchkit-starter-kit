@@ -42,11 +42,6 @@ fields:
             type: link
             display: Link
   -
-    handle: form_section
-    field:
-      type: section
-      display: Form
-  -
     handle: form_title
     field:
       type: text

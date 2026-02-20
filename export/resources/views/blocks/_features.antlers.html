@@ -1,0 +1,22 @@
+{{ partial:components/frame classes="px-5 lg:container" }}
+    {{ partial:layout/block_intro :alignment="intro_alignment" }}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-{{ columns }} gap-10 lg:gap-12">
+        {{ items }}
+            <div class="flex flex-col">
+                {{ if icon }}
+                    <div class="mb-4">
+                        {{ partial:components/icon :icon="icon" classes="text-2xl text-primary" }}
+                    </div>
+                {{ /if }}
+                <h3 class="text-lg font-semibold mb-3 leading-snug">
+                    {{ title }}
+                </h3>
+                {{ if description }}
+                    <p class="text-shade-700 leading-relaxed">
+                        {{ description }}
+                    </p>
+                {{ /if }}
+            </div>
+        {{ /items }}
+    </div>
+{{ /partial:components/frame }}

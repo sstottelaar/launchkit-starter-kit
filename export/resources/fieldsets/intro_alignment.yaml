@@ -1,0 +1,13 @@
+title: 'Intro alignment'
+fields:
+  -
+    handle: intro_alignment
+    field:
+      type: select
+      display: 'Intro alignment'
+      default: left
+      options:
+        - key: left
+          value: Left
+        - key: center
+          value: Center

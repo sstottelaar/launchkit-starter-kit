@@ -8,4 +8,8 @@ fields:
   - handle: items
     field:
       type: entries
+      collections:
+        - testimonials
       display: Items
+  - handle: intro_alignment
+    field: intro_alignment.intro_alignment

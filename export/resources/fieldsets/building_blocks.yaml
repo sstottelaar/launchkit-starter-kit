@@ -49,13 +49,66 @@ fields:
               fields:
                 -
                   import: testimonials
-        layout:
-          display: Layout
-          icon: align-object-top
-          sets:
-            nieuwe_set:
-              display: 'Nieuwe set'
-              fields: {  }
+            hero:
+              display: Hero
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  import: hero
+            cta:
+              display: CTA
+              icon: form-text-field
+              fields:
+                -
+                  import: cta
+            features:
+              display: Features
+              icon: content-book-open
+              fields:
+                -
+                  import: features
+            stats:
+              display: Stats
+              icon: chart-bar
+              fields:
+                -
+                  import: stats
+            team:
+              display: Team
+              icon: users-people
+              fields:
+                -
+                  import: team
+            steps:
+              display: 'How it works'
+              icon: list-bullets
+              fields:
+                -
+                  import: steps
+            pricing:
+              display: Pricing
+              icon: currency-dollar
+              fields:
+                -
+                  import: pricing
+            gallery:
+              display: Gallery
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  import: gallery
+            video:
+              display: Video
+              icon: play-circle
+              fields:
+                -
+                  import: video
+            banner:
+              display: Banner
+              icon: megaphone-simple
+              fields:
+                -
+                  import: banner
         overviews:
           display: Overviews
           icon: layout-display-split-quarters

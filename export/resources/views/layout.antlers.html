@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {{ seo:meta }}
         <style>
             [x-cloak] {
                 display: none !important;
@@ -11,14 +12,9 @@
         </style>
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
         {{ yield:header_scripts }}
-        {{ aardvark-seo:head }}
         <link rel="preconnect" href="https://fonts.bunny.net" />
         <link
             href="https://fonts.bunny.net/css?family=inter:400,500,600,700"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..800;1,400..800&display=swap"
             rel="stylesheet"
         />
     </head>
@@ -27,9 +23,11 @@
         class="flex flex-col min-h-screen text-body font-sans"
         :class="$store.mobileMenu.open ? 'max-sm:overflow-hidden' : ''"
     >
-        {{ aardvark-seo:body }}
+        <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg">
+            {{ trans key="Skip to main content" }}
+        </a>
         {{ partial:layout/header }}
-        <main class="grow">
+        <main id="main-content" class="grow">
             {{ template_content }}
         </main>
 
@@ -37,6 +35,5 @@
         {{ partial:components/search }}
         {{ partial:layout/footer }}
         {{ yield:footer_scripts }}
-        {{ aardvark-seo:footer }}
     </body>
 </html>
